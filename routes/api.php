@@ -19,7 +19,9 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-const C_PATH = 'App\Http\Controllers\\';
+if (!defined('C_PATH')) {
+    define('C_PATH', 'App\Http\Controllers\\');
+}
 Route::group(['prefix' => 'auth'], function ($router) {
     Route::post('login', C_PATH.'AuthController@login');
     Route::post('register', C_PATH.'AuthController@register');
